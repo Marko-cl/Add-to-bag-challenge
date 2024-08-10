@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<div class="whole">
+<div id="nav">
+<div id="images">
+<div id="img1" onclick="black()">   </div>
+<div id="img2" onclick="orange()"  ></div>
+<div id="img3" onclick="white()"></div>
+</div>
+<div id="blank"></div>
+</div>
+
+
+<div id="product">
+    <img class="black" src="black.png" id="black">
+    <img class="orange" src="orange.png" id="orange">
+    <img class="white" src="white.png" id="white">
+
+</div>
+
+
+<div id="info">
+<h5>SHIRT COLLECTION</h5> 
+<p><h1 id="bl">Black Shirt</h1> <h1 id="ora">Orange Shirt</h1> <h1 id="whi">White Shirt</h1></p>
+<p><h5 id="bl-d">Solid black, giving it a sleek and timeless look.</h5> <h5 id="ora-d">Bright or muted shades of orange, ranging from neon to burnt orange, providing a bold and energetic look.</h5> <h5 id="whi-d"> Pure white, providing a clean, crisp, and fresh appearance.</h5></p>
+<p><h1 style="font-weight: bold;">$120.00</h1><h2 style="background-color: aqua;font-size: 20px;width: 50px;">-25%</h2></p>
+<p><h4 style="opacity: 0.5;">$89.99</h4></p>
+<p><h3>Choose size</h3></p>
+<p>
+<div class="sizes">
+<h3 id="S">S</h3>
+<h3 id="M">M</h3>
+<h3 id="X-1">X</h3>
+<h3 id="XL">XL</h3>
+
+
+</div>
+
+
+</p>
+<p style="background-color:aquamarine;opacity: 0.8;cursor: pointer;height: 30px;">ADD TO BAG</p>
+</div>
+
+
+
+</div>
+
+
+
+
+
+</body>
+<style>
+body{
+background-color: antiquewhite;
+display: flex;
+align-items: center;
+justify-content: center;
+justify-items: center;
+text-align: center;
+transform: translateY(50%);
+}
+.whole{
+width: 850px;
+height: 500px;
+display: grid;
+grid-template-columns: 0.45fr 0.8fr 1.75fr;
+grid-template-rows: 1fr;
+grid-template-areas:
+"nav product info"
+
+;
+}
+#nav{grid-area: nav;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1.3fr 0.7fr;
+grid-template-areas: 
+"images"
+"blank"
+;
+
+
+}
+
+#images{
+    grid-area: images;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-areas:
+"img1"
+"img2"
+"img3"
+;
+
+
+}
+#img1{
+    grid-area: img1;border: 1px solid black;margin: 10px;border-radius: 20px;background-image: url(black.png);background-repeat: no-repeat;background-size: cover,contain;background-position-x: -5px;background-color:burlywood;opacity: 1;cursor: pointer;
+}
+#img2{
+    grid-area: img2;border: 1px solid black;margin: 10px;border-radius: 20px;background-image: url(orange.png);background-repeat: no-repeat;background-size: cover,contain;background-position-x: -5px;background-color:burlywood;opacity: 0.5;cursor: pointer;
+}
+#img3{
+    grid-area: img3;border: 1px solid black;margin: 10px;border-radius: 20px;background-image: url(white.png);background-repeat: no-repeat;background-size: cover,contain;background-position-x: -5px;background-color:burlywood;opacity: 0.5;cursor: pointer;
+}
+
+
+#blank{grid-area: blank;}
+
+
+#product{grid-area: product;display: flex;
+align-items: center;
+justify-content: center;
+justify-items: center;
+text-align: center;
+
+
+}
+#info{grid-area: info;}
+#product img{
+height: 350px;
+width: 320px;
+margin: 30px;
+
+}
+
+
+
+.black{
+display: block;box-shadow: 20px 20px 50px black inset;
+transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+}
+.black:hover{
+    box-shadow: -1px -1px 40px black inset;
+
+
+}
+.orange{
+display: none;box-shadow: 20px 20px 50px orangered inset;transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+}
+.orange:hover{
+    box-shadow: -1px -1px 40px orangered inset;
+
+
+}
+
+
+.white{
+display: none;box-shadow: 20px 20px 50px lightblue inset;transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+
+}
+.white:hover{
+    box-shadow: -1px -1px 40px lightblue inset;
+
+
+}
+#ora{display: none;}
+#whi{display: none;}
+
+#ora-d{display: none;}
+#whi-d{display: none;}
+
+.sizes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "S M X-1 XL"
+
+    ;
+
+    padding-left: 20px;
+    padding-right: 20px;color: white;cursor: pointer;
+}
+#S{grid-area:S ;background-color: black;width: 40px;height: 30px;}
+#M{grid-area: M;background-color: black;width: 40px;}
+#X-1{grid-area: X-1 ;background-color: black;width: 40px;}
+#XL{grid-area: XL;background-color: black;width: 40px;}
+h3:hover{
+    opacity: 0.7;
+}
+
+
+</style>
+
+<script>
+function orange(){
+document.getElementById("black").style.display="none";
+document.getElementById("orange").style.display="block";
+document.getElementById("white").style.display="none";
+
+document.getElementById("img1").style.opacity="0.5";
+document.getElementById("img2").style.opacity="1";
+document.getElementById("img3").style.opacity="0.5";
+
+if(document.getElementById("img2").style.opacity="1"){
+    document.getElementById("img1").style.transitionDuration="1s";
+    document.getElementById("img2").style.transitionDuration="1s";
+    document.getElementById("img3").style.transitionDuration="1s";
+
+}
+document.getElementById("bl").style.display="none";
+document.getElementById("ora").style.display="block";
+document.getElementById("whi").style.display="none";
+
+document.getElementById("bl-d").style.display="none";
+document.getElementById("ora-d").style.display="block";
+document.getElementById("whi-d").style.display="none";
+
+
+
+}
+
+function black(){
+document.getElementById("black").style.display="block"
+document.getElementById("orange").style.display="none"
+document.getElementById("white").style.display="none"
+
+document.getElementById("img1").style.opacity="1";
+document.getElementById("img2").style.opacity="0.5";
+document.getElementById("img3").style.opacity="0.5";
+
+document.getElementById("bl").style.display="block";
+document.getElementById("ora").style.display="none";
+document.getElementById("whi").style.display="none";
+
+document.getElementById("bl-d").style.display="block";
+document.getElementById("ora-d").style.display="none";
+document.getElementById("whi-d").style.display="none";
+
+}
+
+function white(){
+document.getElementById("black").style.display="none"
+document.getElementById("orange").style.display="none"
+document.getElementById("white").style.display="block"
+
+document.getElementById("img1").style.opacity="0.5";
+document.getElementById("img2").style.opacity="0.5";
+document.getElementById("img3").style.opacity="1";
+
+
+document.getElementById("bl").style.display="none";
+document.getElementById("ora").style.display="none";
+document.getElementById("whi").style.display="block";
+
+document.getElementById("bl-d").style.display="none";
+document.getElementById("ora-d").style.display="none";
+document.getElementById("whi-d").style.display="block";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
